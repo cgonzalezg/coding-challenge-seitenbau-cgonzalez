@@ -14,4 +14,5 @@ object Application extends App with Configuration {
 
   while (!Processor(instructionsList(Registers.IP)).execute) {
   }
+  println("\n\n" + Registers.toString())
 }

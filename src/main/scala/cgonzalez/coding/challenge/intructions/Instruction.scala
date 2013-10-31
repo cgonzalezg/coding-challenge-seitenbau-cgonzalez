@@ -17,10 +17,12 @@ trait Instruction extends BinaryOperations {
   def execute: Boolean = {
     process
 
-    Registers.IP match {
-      case -1 => true
-      case _ => Registers.increaseIp; false
-    }
+//    Registers.IP match {
+//      case -1 => true
+//      case _ => Registers.increaseIp; false
+//    }
+    Registers.increaseIp
+    Registers.stop
   }
 
 }

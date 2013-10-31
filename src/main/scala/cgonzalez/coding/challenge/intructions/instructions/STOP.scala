@@ -12,6 +12,6 @@ import cgonzalez.coding.challenge.computer.Registers
  */
 class STOP extends Instruction {
   def process: Unit = {
-    Registers.IP = -1
+    Registers.stop = true
   }
 }

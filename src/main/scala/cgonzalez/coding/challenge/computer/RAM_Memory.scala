@@ -22,7 +22,7 @@ class Register() extends BinaryOperations {
   def getDecimal: Short = getDecimal(binary)
 }
 
-object Registers {
+object Registers extends BinaryOperations {
   var registers = mutable.HashMap(
     'A' -> new Register().setBinary(0),
     'B' -> new Register().setBinary(0),
@@ -30,10 +30,16 @@ object Registers {
   )
   var Z: Boolean = false
   var IP: Int = 0
+
   def increaseIp = {
-    IP = IP +1
+    IP = IP + 1
   }
 
+  var stop: Boolean = false
+
+  override def toString(): String = {
+    registers.toList.reverse.foldLeft("")((accu, x) => accu.concat(x._1.toString + "->" + getDecimal(x._2.binary) + "\n")) + "Z->" + Z + "\nIP->" + IP
+  }
 }
 
 object RAM_Memory {
