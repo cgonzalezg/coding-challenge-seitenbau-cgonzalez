@@ -13,20 +13,9 @@
     <dependencies>
 
         <dependency>
-            <groupId>com.codahale</groupId>
-            <artifactId>jerkson_2.9.1</artifactId>
-            <version>0.5.0</version>
-        </dependency>
-        <dependency>
             <groupId>com.typesafe</groupId>
             <artifactId>config</artifactId>
             <version>1.0.2</version>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.11</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 
