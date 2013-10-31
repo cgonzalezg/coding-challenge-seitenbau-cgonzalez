@@ -13,9 +13,10 @@ java -jar -Dconfig.file=application.conf coding-challenge-seitenbau-cgonzalez-ja
 ##application.conf
 - set (-Dconfig.file=application.conf)
 - default
-```scala
+
+```
 instructions: [
-  "LOAD A, 1",
+        "LOAD A, 1",
         "SETM 0, A",
         "LOADM A,0",
         "OR A, 8",
