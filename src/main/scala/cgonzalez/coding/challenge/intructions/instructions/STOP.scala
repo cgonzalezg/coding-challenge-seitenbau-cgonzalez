@@ -4,14 +4,13 @@ import cgonzalez.coding.challenge.intructions.Instruction
 import cgonzalez.coding.challenge.computer.Registers
 
 /**
- * Created with IntelliJ IDEA.
- * User: cgonzalez
- * Date: 10/30/13
- * Time: 4:51 PM
- * To change this template use File | Settings | File Templates.
+ * class that represent the STOP instruction
+ * stop execution ; Z=0;
  */
 class STOP extends Instruction {
   def process: Unit = {
+    Registers.increaseIp
+    println("\n\n" + Registers.toString())
     Registers.stop = true
   }
 }

@@ -2,19 +2,15 @@ package cgonzalez.coding.challenge.computer
 
 import scala.collection.mutable
 
+
 /**
- * Created with IntelliJ IDEA.
- * User: cesar
- * Date: 10/28/13
- * Time: 6:42 PM
- * To change this template use File | Settings | File Templates.
+ * Class for creating registers
  */
 class Register() extends BinaryOperations {
   var binary = Array[Char]()
 
   def setBinary(value: Short) = {
     binary = getBinary(value)
-
     this
 
   }
@@ -22,16 +18,22 @@ class Register() extends BinaryOperations {
   def getDecimal: Short = getDecimal(binary)
 }
 
+/**
+ * Object that represents the Registers
+ */
 object Registers extends BinaryOperations {
-  var registers = mutable.HashMap(
+
+  val registers = mutable.HashMap(
     'A' -> new Register().setBinary(0),
     'B' -> new Register().setBinary(0),
     'C' -> new Register().setBinary(0)
   )
+
   var Z: Boolean = false
+
   var IP: Int = 0
 
-  def increaseIp = {
+  def increaseIp() = {
     IP = IP + 1
   }
 
@@ -42,16 +44,41 @@ object Registers extends BinaryOperations {
   }
 }
 
-object RAM_Memory {
-  var memory: Array[Char] = (0 to 255).map(x => '0').toArray
 
+/**
+ * Object that represents the Memory RAM
+ * 256 bytes
+ */
+object RAM_Memory {
+  var size: Int = _
+  var memory: Array[Char] = _
+
+  /**
+   * Initialization of the RAM Memory in bytes
+   * @param s Int
+   */
+  def init(s: Int) {
+    size = s * 8
+    memory = (0 to size - 1).map(x => '0').toArray
+  }
+
+  /**
+   * Set data in the Memory
+   * @param offset Int
+   * @param value Array[Char]
+   */
   def setMemory(offset: Int, value: Array[Char]) = {
     for (index <- 0 to value.size - 1) {
-
       memory(index) = value(index)
     }
   }
 
+  /**
+   * Read data from the Memory
+   * @param offset Int
+   * @param size  Int
+   * @return Array[Char]
+   */
   def readMemory(offset: Int, size: Int): Array[Char] = {
     (offset to offset + size - 1).map(index => memory(index)).toArray
 

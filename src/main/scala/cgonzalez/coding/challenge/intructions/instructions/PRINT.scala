@@ -4,11 +4,9 @@ import cgonzalez.coding.challenge.intructions.Instruction
 import cgonzalez.coding.challenge.computer.Registers
 
 /**
- * Created with IntelliJ IDEA.
- * User: cgonzalez
- * Date: 10/30/13
- * Time: 4:51 PM
- * To change this template use File | Settings | File Templates.
+ * class that represent the PRINT instruction
+ * prints reg value IP+=1 ; Z=0; (no linebreak)
+ * @param reg Char
  */
 case class PRINT(reg: Char) extends Instruction {
   def process: Unit = {

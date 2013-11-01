@@ -1,11 +1,8 @@
 package cgonzalez.coding.challenge
 
 /**
- * Created with IntelliJ IDEA.
- * User: cgonzalez
- * Date: 10/31/13
- * Time: 6:55 PM
- * To change this template use File | Settings | File Templates.
+ * A template trait for Configuration the Application.
+ *
  */
 
 import com.typesafe.config.ConfigFactory
@@ -16,13 +13,10 @@ object Configuration {
 }
 
 trait Configuration {
-  // namespace of the apcConfig => override in your class if needed => defaults to package name of the class
-  /**
-   * load apc config
-   */
-  protected lazy val apcConfig = config.getConfig(this.getClass.getPackage.getName)
 
   def config = Configuration.config
+
+  def memorySize = config.getInt("memory_size")
 
   def instructionsList = config.getStringList("instructions")
 

@@ -1,18 +1,14 @@
 package cgonzalez.coding.challenge
 
-import cgonzalez.coding.challenge.computer.{Registers, Processor}
+import cgonzalez.coding.challenge.computer.{RAM_Memory, Registers, Processor}
 import scala.collection.JavaConversions._
 
 /**
- * Created with IntelliJ IDEA.
- * User: cgonzalez
- * Date: 10/31/13
- * Time: 6:40 PM
- * To change this template use File | Settings | File Templates.
+ * Object to execute the Application
  */
 object Application extends App with Configuration {
-
+  RAM_Memory.init(memorySize)
   while (!Processor(instructionsList(Registers.IP)).execute) {
   }
-  println("\n\n" + Registers.toString())
+
 }

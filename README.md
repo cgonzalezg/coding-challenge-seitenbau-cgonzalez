@@ -1,5 +1,11 @@
 coding-challenge-seitenbau-cgonzalez
 ====================================
+#Description
+Implementation for the SFCPU - The Seitenbau Fantasy CPU.
+
+More information:
+
+<a href="http://seitenbau.github.io/coding-challenge/">Seitenbau Coding Challenge 2013</a>
 #Compile
 ```
 mvn clean compile assembly:single
@@ -12,9 +18,11 @@ java -jar -Dconfig.file=application.conf coding-challenge-seitenbau-cgonzalez-ja
 
 ##application.conf
 - set (-Dconfig.file=application.conf)
+
 - default
 
 ```
+memory_size = 256
 instructions: [
         "LOAD A, 1",
         "SETM 0, A",
