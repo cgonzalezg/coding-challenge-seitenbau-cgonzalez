@@ -21,9 +21,11 @@ java -jar -Dconfig.file=application.conf coding-challenge-seitenbau-cgonzalez-ja
 - set (-Dconfig.file=application.conf)
 - it should be in the same folder that the coding-challenge-seitenbau-cgonzalez-jar-with-dependencies.jar is
 - default (no application.conf is set)
+
 ```
 java -jar coding-challenge-seitenbau-cgonzalez-jar-with-dependencies.jar
 ```
+
 ```
 memory_size = 256
 instructions: [
